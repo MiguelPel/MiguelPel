@@ -1,0 +1,286 @@
+/* Import fonts */
+
+@font-face {
+    font-family: 'Fira';
+    src: url('../ressources/fonts/fira/FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Medium';
+    src: url('../ressources/fonts/fira/FiraSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Bold';
+    src: url('../ressources/fonts/fira/FiraSans-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Global */
+
+body {
+    font-family: 'Fira', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #FDFDFD;
+}
+
+.orange {
+    color: #FF7F20;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    /* Attention, cela influence aussi la liste du bas!!!*/
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+
+/* Header */
+
+header {
+    height: 100vh;
+    background: url('../img/background_lamp.jpg') no-repeat 0 0;
+    background-size: cover;
+    background-position: center bottom;
+    padding: 30px 30px 0px 30px;
+    overflow: hidden;
+}
+
+header #logo {
+    width: 40%;
+}
+
+header nav {
+    position: relative;
+    top: 15%;
+    left: 2%;
+    /*display: none;*/
+}
+
+header li {
+    margin: 20px 0 20px 0;
+    padding: 20px 0 20px 0;
+}
+
+header a {
+    font-family: 'Fira';
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: rgba(114, 114, 114, 0.7);
+}
+
+header a:hover {
+    color: #FF7F20;
+}
+
+header span {
+    font-family: 'Fira';
+    text-transform: uppercase;
+    font-size: 1.6em;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+
+header span:hover {
+    color: #FF7F20;
+}
+
+
+/* Social Links */
+
+#social {
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    z-index: 2;
+}
+
+#social img {
+    display: block;
+    margin: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.6;
+}
+
+#social img:hover {
+    opacity: 1;
+}
+
+
+/* Sections And Mottos Container*/
+
+#container {
+    margin: 0;
+    padding: 0 5% 0 5%;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+#container h1 {
+    text-transform: uppercase;
+    display: inline;
+}
+
+#container section,
+#container img,
+#container h1,
+#container div {
+    position: relative;
+}
+
+
+/* Mottos */
+
+.motto {
+    font-family: 'Fira Medium';
+    text-transform: lowercase;
+    font-size: 3em;
+    text-align: center;
+    color: #727272;
+    display: inline;
+}
+
+
+/* Section Services */
+
+#services {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#services img {
+    width: 30%;
+    height: auto;
+    padding: 10% 0 10% 10%;
+}
+
+#services h1 {
+    position: absolute;
+    font-size: 4em;
+    left: 0px;
+    margin: 0;
+    padding: 27% 0 0 0;
+}
+
+
+/* Motto 1 */
+
+#motto1 {
+    float: right;
+    padding: 27% 14% 0 0;
+}
+
+
+/* Section Design */
+
+#design {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
+/* Motto 2 */
+
+#motto2 {
+    float: left;
+    padding: 45% 2% 0 10%;
+}
+
+#design h1 {
+    position: absolute;
+    font-family: 'Fira Medium';
+    z-index: 1;
+    font-size: 12em;
+    left: 0px;
+    margin: 0;
+    padding: 4% 0 0 50%;
+}
+
+#design img {
+    z-index: 0;
+    width: 40%;
+    height: auto;
+    padding: 10% 0 10% 10%;
+}
+
+
+/* Motto 3 */
+
+#motto3 {
+    float: right;
+    text-align: center;
+    padding: 5% 0 0 0;
+}
+
+
+/* Section News */
+
+#news {
+    margin: 20% 0 0 0;
+    width: 100%;
+    clear: right;
+}
+
+#news img {
+    margin: 0;
+    width: 35%;
+    padding: 10% 0 0 20%;
+}
+
+#news h1 {
+    margin: 0;
+    font-size: 4.2em;
+    position: absolute;
+    padding: 25% 0 0 8%;
+}
+
+
+/* footer */
+
+footer {
+    margin: 5% 0 0 0;
+    padding: 10% 0 5% 0;
+    background: url('../img/background_footer.jpg') no-repeat;
+    background-size: cover;
+    min-height: 200px;
+}
+
+footer ul {
+    padding-top: 5%;
+}
+
+footer li,
+footer a,
+footer p {
+    font-family: 'Fira Medium';
+    font-size: 1.2em;
+    color: black;
+    display: inline-block;
+    padding: 0 4% 0 7%;
+}
+
+footer a {
+    text-transform: uppercase;
+}
+
+footer a:hover {
+    color: #FF7F20;
+}
