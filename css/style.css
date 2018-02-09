@@ -2,21 +2,33 @@
 
 @font-face {
     font-family: 'Fira';
+<<<<<<< HEAD
     src: url('../ressources/fonts/fira/FiraSans-Regular.ttf') format('truetype');
+=======
+    src: url('../fonts/fira/FiraSans-Regular.ttf') format('truetype');
+>>>>>>> changed the font-sizes and created media queries
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fira Medium';
+<<<<<<< HEAD
     src: url('../ressources/fonts/fira/FiraSans-Medium.ttf') format('truetype');
+=======
+    src: url('../fonts/fira/FiraSans-Medium.ttf') format('truetype');
+>>>>>>> changed the font-sizes and created media queries
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fira Bold';
+<<<<<<< HEAD
     src: url('../ressources/fonts/fira/FiraSans-SemiBold.ttf') format('truetype');
+=======
+    src: url('../fonts/fira/FiraSans-SemiBold.ttf') format('truetype');
+>>>>>>> changed the font-sizes and created media queries
     font-weight: normal;
     font-style: normal;
 }
@@ -132,7 +144,11 @@ header span:hover {
 
 #container h1 {
     text-transform: uppercase;
+<<<<<<< HEAD
     display: inline;
+=======
+    display: inline-block;
+>>>>>>> changed the font-sizes and created media queries
 }
 
 #container section,
@@ -142,16 +158,31 @@ header span:hover {
     position: relative;
 }
 
+<<<<<<< HEAD
+=======
+#container img:hover,
+#container h1:hover {
+    transform: scale(1.05);
+}
+
+>>>>>>> changed the font-sizes and created media queries
 
 /* Mottos */
 
 .motto {
     font-family: 'Fira Medium';
     text-transform: lowercase;
+<<<<<<< HEAD
     font-size: 3em;
     text-align: center;
     color: #727272;
     display: inline;
+=======
+    font-size: 3vw;
+    text-align: center;
+    color: #727272;
+    display: inline-block;
+>>>>>>> changed the font-sizes and created media queries
 }
 
 
@@ -172,7 +203,11 @@ header span:hover {
 
 #services h1 {
     position: absolute;
+<<<<<<< HEAD
     font-size: 4em;
+=======
+    font-size: 4vw;
+>>>>>>> changed the font-sizes and created media queries
     left: 0px;
     margin: 0;
     padding: 27% 0 0 0;
@@ -208,7 +243,11 @@ header span:hover {
     position: absolute;
     font-family: 'Fira Medium';
     z-index: 1;
+<<<<<<< HEAD
     font-size: 12em;
+=======
+    font-size: 12vw;
+>>>>>>> changed the font-sizes and created media queries
     left: 0px;
     margin: 0;
     padding: 4% 0 0 50%;
@@ -247,7 +286,11 @@ header span:hover {
 
 #news h1 {
     margin: 0;
+<<<<<<< HEAD
     font-size: 4.2em;
+=======
+    font-size: 4.2vw;
+>>>>>>> changed the font-sizes and created media queries
     position: absolute;
     padding: 25% 0 0 8%;
 }
@@ -261,6 +304,10 @@ footer {
     background: url('../img/background_footer.jpg') no-repeat;
     background-size: cover;
     min-height: 200px;
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> changed the font-sizes and created media queries
 }
 
 footer ul {
@@ -268,8 +315,12 @@ footer ul {
 }
 
 footer li,
+<<<<<<< HEAD
 footer a,
 footer p {
+=======
+footer a {
+>>>>>>> changed the font-sizes and created media queries
     font-family: 'Fira Medium';
     font-size: 1.2em;
     color: black;
@@ -277,10 +328,54 @@ footer p {
     padding: 0 4% 0 7%;
 }
 
+<<<<<<< HEAD
+=======
+footer p {
+    position: absolute;
+    font-family: 'Fira Medium';
+    font-size: 1.2em;
+    right: 5%;
+    bottom: 10%;
+}
+
+>>>>>>> changed the font-sizes and created media queries
 footer a {
     text-transform: uppercase;
 }
 
 footer a:hover {
     color: #FF7F20;
+<<<<<<< HEAD
+=======
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    /* changer le riga maria */
+    header #logo {
+        width: 50%;
+    }
+    header span {
+        font-size: 1.2em;
+        position: absolute;
+        left: 7%;
+        top: 12%;
+        max-width: 37%;
+        max-height: 6%;
+    }
+    header a {
+        color: black;
+    }
+    footer ul {
+        padding-top: 10%;
+    }
+    footer li,
+    footer a {
+        padding-top: 5%;
+        display: block;
+    }
+    footer p {
+        bottom: 8%;
+    }
+>>>>>>> changed the font-sizes and created media queries
 }
