@@ -50,12 +50,22 @@ ul {
 /* Header */
 
 header {
+    padding: 30px 30px 0px 30px;
+    overflow: hidden;
+}
+
+#home_header {
     height: 100vh;
     background: url('../img/background_lamp.jpg') no-repeat 0 0;
     background-size: cover;
-    background-position: center bottom;
-    padding: 30px 30px 0px 30px;
-    overflow: hidden;
+    background-position: right bottom;
+}
+
+#services_background {
+    height: 100vh;
+    background: url('../img/background_map.jpg') no-repeat 0 0;
+    background-size: cover;
+    background-position: left bottom;
 }
 
 header #logo {
@@ -145,6 +155,7 @@ header span:hover {
 #container img:hover,
 #container h1:hover {
     transform: scale(1.05);
+    transition-duration: 1s;
 }
 
 
@@ -276,6 +287,7 @@ footer ul {
 footer li,
 footer a {
     font-family: 'Fira Medium';
+    text-transform: uppercase;
     font-size: 1.2em;
     color: black;
     display: inline-block;
@@ -290,11 +302,46 @@ footer p {
     bottom: 10%;
 }
 
-footer a {
-    text-transform: uppercase;
+footer a:hover {
+    color: #FF7F20;
 }
 
-footer a:hover {
+
+/* Services footer */
+
+#services_footer {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+
+#services_footer ul {
+    padding-top: 5%;
+}
+
+#services_footer li,
+#services_footer a {
+    font-family: 'Fira Medium';
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: black;
+    display: inline-block;
+    padding: 0 4% 0 7%;
+}
+
+#services_footer p {
+    position: absolute;
+    font-family: 'Fira Medium';
+    font-size: 1.2em;
+    right: 5%;
+    /* how can I push that even
+lower towerd the bottom? */
+    bottom: 0.2%;
+}
+
+#services_footer a:hover {
     color: #FF7F20;
 }
 
@@ -315,15 +362,40 @@ footer a:hover {
     header a {
         color: black;
     }
-    footer ul {
+    #services_background {
+        height: 100%;
+    }
+    #services img {
+        width: 35%;
+    }
+    #design img {
+        width: 42%;
+    }
+    #news img {
+        width: 40%;
+    }
+    #motto1 {
+        padding-right: 10%;
+    }
+    #motto2 {
+        padding-left: 10%;
+    }
+    #motto3 {
+        padding-right: 10%;
+    }
+    footer ul,
+    #services_footer ul {
         padding-top: 10%;
     }
     footer li,
-    footer a {
+    footer a,
+    #services_footer li,
+    #services_footer a {
         padding-top: 5%;
         display: block;
     }
-    footer p {
+    footer p,
+    #services_footer p {
         bottom: 8%;
     }
 }
