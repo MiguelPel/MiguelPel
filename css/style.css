@@ -37,6 +37,7 @@ body {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 ul {
@@ -62,7 +63,8 @@ header {
 }
 
 #services_background {
-    height: 100vh;
+    /*height: 100vh;*/
+    height: 100%;
     background: url('../img/background_map.jpg') no-repeat 0 0;
     background-size: cover;
     background-position: left bottom;
@@ -70,6 +72,17 @@ header {
 
 header #logo {
     width: 40%;
+}
+
+header #logo-small {
+    width: 20%;
+    min-width: 150px;
+}
+
+header .contact-pages {
+    position: relative;
+    left: -25px;
+    color: rgba(114, 114, 114, 0.7);
 }
 
 header nav {
@@ -80,6 +93,7 @@ header nav {
 }
 
 header li {
+    font-family: 'Fira Medium';
     margin: 20px 0 20px 0;
     padding: 20px 0 20px 0;
 }
@@ -91,7 +105,8 @@ header a {
     color: rgba(114, 114, 114, 0.7);
 }
 
-header a:hover {
+header a:hover,
+header li:hover {
     color: #FF7F20;
 }
 
@@ -107,6 +122,38 @@ header span {
 header span:hover {
     color: #FF7F20;
 }
+
+
+/* Appearing text Services */
+
+.hidden {
+    font-family: 'Fira';
+    height: 0px;
+    overflow: hidden;
+    -webkit-transition: height 10s;
+    /* For Safari 3.1 to 6.0 */
+    transition: height 10s;
+}
+
+#oikodomikes,
+#taktopoiisi,
+#adeies,
+#architaktoniki,
+#epivlepsi,
+#diamorfoseis,
+#schediasmos {
+    font-family: 'Fira';
+    height: 0px;
+    overflow: hidden;
+    -webkit-transition: height 10s;
+    /* For Safari 3.1 to 6.0 */
+    transition: height 10s;
+}
+
+
+/*#adeies {
+    display: inline;
+}*/
 
 
 /* Social Links */
@@ -133,29 +180,61 @@ header span:hover {
 
 /* Sections And Mottos Container*/
 
-#container {
+.container {
     margin: 0;
     padding: 0 5% 0 5%;
     overflow: hidden;
     min-height: 600px;
 }
 
-#container h1 {
+.container h1 {
     text-transform: uppercase;
     display: inline-block;
 }
 
-#container section,
-#container img,
-#container h1,
-#container div {
+.container section,
+.container img,
+.container h1,
+.container div {
     position: relative;
 }
 
-#container img:hover,
-#container h1:hover {
+.container img:hover,
+.container h1:hover {
     transform: scale(1.05);
     transition-duration: 1s;
+}
+
+
+/* Design Projects */
+
+.project {
+    margin: 5%;
+}
+
+.project img {
+    width: 70%;
+}
+
+.project p {
+    font-family: 'Fira Medium';
+    color: rgba(114, 114, 114, 0.7);
+}
+
+.right img {
+    float: right;
+}
+
+.right p {
+    float: left;
+}
+
+.left img {
+    float: left;
+}
+
+.left p {
+    float: right;
 }
 
 
@@ -318,7 +397,8 @@ footer a:hover {
 }
 
 #services_footer ul {
-    padding-top: 5%;
+    padding: 5% 0 4% 0;
+    /*padding-top: 5%;*/
 }
 
 #services_footer li,
@@ -361,6 +441,9 @@ lower towerd the bottom? */
     }
     header a {
         color: black;
+    }
+    .contact-pages a {
+        color: rgba(114, 114, 114, 0.7);
     }
     #services_background {
         height: 100%;
