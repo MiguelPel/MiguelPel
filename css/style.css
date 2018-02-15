@@ -123,35 +123,58 @@ header span:hover {
     color: #FF7F20;
 }
 
+.contact-pages {
+    margin-bottom: 0;
+}
+
 
 /* Appearing text Services */
 
+#service_header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#services_body {
+    position: relative;
+    padding: 0 5% 0 5%;
+}
+
+.cell {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.catergories {
+    font-size: 1.2em;
+    cursor: default;
+    width: 20%;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
 .hidden {
     font-family: 'Fira';
+    position: absolute;
+    left: 26%;
+    width: 70%;
     height: 0px;
     overflow: hidden;
-    -webkit-transition: height 10s;
-    /* For Safari 3.1 to 6.0 */
-    transition: height 10s;
-}
-
-#oikodomikes,
-#taktopoiisi,
-#adeies,
-#architaktoniki,
-#epivlepsi,
-#diamorfoseis,
-#schediasmos {
-    font-family: 'Fira';
-    height: 0px;
-    overflow: hidden;
-    -webkit-transition: height 10s;
-    /* For Safari 3.1 to 6.0 */
-    transition: height 10s;
 }
 
 
-/*#adeies {
+/*#adeies
+{
     display: inline;
 }*/
 
@@ -201,7 +224,7 @@ header span:hover {
 
 .container img:hover,
 .container h1:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition-duration: 1s;
 }
 
@@ -209,32 +232,79 @@ header span:hover {
 /* Design Projects */
 
 .project {
-    margin: 5%;
+    margin: 2%;
+    padding: 5% 10% 0 10%;
+}
+
+.project h1 {
+    display: block;
+    position: relative;
+    top: 10px;
+    text-transform: lowercase;
+    margin: 0;
+    z-index: 1;
 }
 
 .project img {
-    width: 70%;
+    width: 40%;
+    margin: 0;
+    z-index: 0;
 }
 
 .project p {
     font-family: 'Fira Medium';
     color: rgba(114, 114, 114, 0.7);
+    width: 25%;
+    padding: 20px 20px 0 20px;
+    margin: 0;
+}
+
+.left {
+    left: -1%;
+}
+
+.right {
+    left: 30%;
+}
+
+.left h1 {
+    padding-left: 10%;
+}
+
+.right h1 {
+    padding-left: 20%;
 }
 
 .right img {
     float: right;
-}
-
-.right p {
-    float: left;
+    padding-right: 35%;
+    padding-left: 20px;
 }
 
 .left img {
     float: left;
+    margin-right: 10px;
+    clear: both;
 }
 
 .left p {
-    float: right;
+    margin-left: 0px;
+    overflow: auto;
+    display: block;
+    overflow: hidden;
+}
+
+.right p {
+    left: -20px;
+}
+
+
+/* Clearfix */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 
@@ -445,11 +515,33 @@ lower towerd the bottom? */
     .contact-pages a {
         color: rgba(114, 114, 114, 0.7);
     }
+    #social {
+        top: 10px;
+        right: -2px;
+    }
+    .project img {
+        width: 60%;
+        margin: 0;
+    }
     #services_background {
         height: 100%;
     }
     #services img {
         width: 35%;
+    }
+    #services_body {
+        height: 100%;
+    }
+    .cell {
+        display: inline;
+    }
+    .catergories {
+        font-size: 1.2em;
+        width: 100%;
+    }
+    .hidden {
+        position: static;
+        width: 100%;
     }
     #design img {
         width: 42%;
@@ -466,6 +558,56 @@ lower towerd the bottom? */
     #motto3 {
         padding-right: 10%;
     }
+    /*******************/
+    /* ICI retouches page design/ projets*/
+    /********************/
+    .project {
+        margin: 2%;
+        padding: 0 10% 0 10%;
+    }
+    .project h1 {
+        display: block;
+        position: relative;
+        top: 10px;
+    }
+    .project img {
+        width: 50%;
+    }
+    .project p {
+        font-family: 'Fira Medium';
+        color: rgba(114, 114, 114, 0.7);
+        width: 25%;
+        padding: 20px 20px 0 20px;
+        margin: 0;
+    }
+    .left h1 {
+        padding-left: 10%;
+    }
+    .right h1 {
+        padding-left: 15%;
+    }
+    .right img {
+        float: right;
+        padding-right: 35%;
+        padding-left: 10px;
+    }
+    .left img {
+        float: left;
+        margin-right: 10px;
+        /*clear: both;*/
+    }
+    .left p {
+        float: right;
+        margin-left: 0px;
+        overflow: auto;
+        display: block;
+        overflow: hidden;
+    }
+    .right p {
+        float: left;
+        left: -20px;
+    }
+    /************************/
     footer ul,
     #services_footer ul {
         padding-top: 10%;
@@ -476,9 +618,22 @@ lower towerd the bottom? */
     #services_footer a {
         padding-top: 5%;
         display: block;
+        /* ATTENTION, check if work on every pages */
+        size: 1em;
     }
     footer p,
     #services_footer p {
         bottom: 8%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .project p {
+        font-size: 0.8em;
+    }
+    /* Plus AMELIORER LES MARGES */
+    #social {
+        top: 5px;
+        right: -15px;
     }
 }
