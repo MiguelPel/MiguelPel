@@ -222,6 +222,17 @@ header span:hover {
     position: relative;
 }
 
+
+/****************/
+
+
+/* ATTENTION, be more precise,
+so all the images (ex in design slideshow)
+doesn't scale*/
+
+
+/*****************/
+
 .container img:hover,
 .container h1:hover {
     transform: scale(1.03);
@@ -299,13 +310,104 @@ header span:hover {
 }
 
 
-/* Clearfix */
+/*Clearfix*/
 
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
+
+
+/*****************/
+
+
+/* DESIGN SlideShows*/
+
+
+/******************/
+
+.togglebtn {
+    cursor: default;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    /*user-select: none;
+     Likely future */
+}
+
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+
+/* Hide the images by default */
+
+.slider {
+    text-align: center;
+    object-fit: cover;
+}
+
+
+/* Images */
+
+.slide_1,
+.slide_2,
+.slide_3,
+.slide_4 {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20%;
+    max-height: 300px;
+    opacity: 1;
+}
+
+
+/* Fading animation 
+!!! doesn't work yet */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+/****************/
+
+
+/*  END DESIGN SlideShow  */
+
+
+/***************/
 
 
 /* Mottos */
@@ -563,22 +665,30 @@ lower towerd the bottom? */
     /********************/
     .project {
         margin: 2%;
-        padding: 0 10% 0 10%;
+        padding: 10% 10% 0 10%;
     }
     .project h1 {
         display: block;
         position: relative;
         top: 10px;
     }
+    .right {
+        left: -10%;
+    }
+    .right h1 {
+        left: 35%;
+    }
+    .left h1 {
+        left: -15%;
+    }
+    .clearfix {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
     .project img {
         width: 50%;
-    }
-    .project p {
-        font-family: 'Fira Medium';
-        color: rgba(114, 114, 114, 0.7);
-        width: 25%;
-        padding: 20px 20px 0 20px;
-        margin: 0;
+        align-self: flex-start;
     }
     .left h1 {
         padding-left: 10%;
@@ -586,26 +696,24 @@ lower towerd the bottom? */
     .right h1 {
         padding-left: 15%;
     }
+    /*** children flex */
     .right img {
         float: right;
         padding-right: 35%;
         padding-left: 10px;
+        order: 2;
     }
     .left img {
         float: left;
         margin-right: 10px;
+        order: 1;
         /*clear: both;*/
     }
     .left p {
-        float: right;
-        margin-left: 0px;
-        overflow: auto;
-        display: block;
-        overflow: hidden;
+        order: 2;
     }
     .right p {
-        float: left;
-        left: -20px;
+        order: 1;
     }
     /************************/
     footer ul,
