@@ -230,14 +230,17 @@ header span:hover {
 so all the images (ex in design slideshow)
 doesn't scale*/
 
-
-/*****************/
-
-.container img:hover,
-.container h1:hover {
+.project img:hover,
+.project h1:hover,
+.container a img:hover,
+.container a h1:hover,
+.categories li:hover {
     transform: scale(1.03);
     transition-duration: 1s;
 }
+
+
+/*****************/
 
 
 /* Design Projects */
@@ -290,12 +293,14 @@ doesn't scale*/
     float: right;
     padding-right: 35%;
     padding-left: 20px;
+    opacity: 1;
 }
 
 .left img {
     float: left;
     margin-right: 10px;
     clear: both;
+    opacity: 1;
 }
 
 .left p {
