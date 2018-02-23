@@ -94,7 +94,7 @@ header nav {
 
 header li {
     font-family: 'Fira Medium';
-    margin: 40px 0 40px 0;
+    margin: 40px 0 80px 0;
     padding: 0;
 }
 
@@ -229,8 +229,7 @@ header span:hover {
 /* The animation code */
 
 .front {
-    top: 0px;
-    /*top: 200px;*/
+    top: 200px;
     -webkit-transition: top 0.5s;
     /* For Safari 3.1 to 6.0 */
     transition: top 0.5s;
@@ -241,8 +240,7 @@ header span:hover {
 }
 
 .middle {
-    top: 0px;
-    /*top: 100px;*/
+    top: 100px;
     -webkit-transition: top 0.5s;
     /* For Safari 3.1 to 6.0 */
     transition: top 0.5s;
@@ -250,8 +248,7 @@ header span:hover {
 }
 
 .back {
-    top: 0px;
-    /*top: 50px;*/
+    top: 50px;
     -webkit-transition: top 0.5s;
     /* For Safari 3.1 to 6.0 */
     transition: top 0.5s;
