@@ -92,7 +92,12 @@ header nav {
     /*display: none;*/
 }
 
+header ul {
+    position: relative;
+}
+
 header li {
+    position: relative;
     font-family: 'Fira Medium';
     margin: 40px 0 80px 0;
     padding: 0;
@@ -129,15 +134,13 @@ header span:hover {
 
 .sliderUp {
     position: relative;
-    top: 100px;
-    display: none;
-    -webkit-transition: top 0.7s;
-    /* Safari and Chrome*/
-    -moz-transition: top 0.7s;
-    /* Firefox */
-    -o-transition: top 0.7s;
-    /* Opera */
-    transition: top 0.7s;
+    top: 400px;
+    opacity: 0;
+    display: list-item;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s;
 }
 
 
@@ -235,7 +238,6 @@ header span:hover {
 .front,
 .middle,
 .back {
-    top: 200px;
     -webkit-transition: top 0.7s;
     /* Safari and Chrome*/
     -moz-transition: top 0.7s;
@@ -256,7 +258,7 @@ header span:hover {
 }
 
 .front {
-    top: 200px;
+    top: 300px;
 }
 
 .middle {

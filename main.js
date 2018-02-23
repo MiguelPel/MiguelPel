@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var front = 200;
+    var front = 300;
     var middle = 100;
     var back = 50;
     var elements = document.getElementsByClassName("animate");
@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var lastScrollTop = 0;
     var sliders = document.getElementsByClassName("sliderUp");
     for (var i = 0; i < 4; i++) {
-        var margin = (i * 300) + 400;
+        var margin = (i * 100) + 200;
+        elements[i].style.top = margin + 'px';
         sliders[i].style.top = margin + 'px';
         console.log(margin);
     }
@@ -42,17 +43,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }, false);
     var header = document.querySelector("header");
     header.addEventListener("click", function() {
+        var i;
         console.log('header clicked');
-        //var sliders = document.getElementsByClassName("sliderUp");
-        for (var i = 0; i < 4; i++) {
-            sliders[i].style.display = "list-item";
+        for (i = 0; i < 4; i++) {
+            sliders[i].style.opacity = "1";
             sliders[i].style.top = "0px";
         }
     });
 });
 
 function resetAnimations() {
-    sliders = document.getElementsByClassName("sliderUp");
+    // elements!!! not sliders. Sliders are the sliderUp
     for (var i = 0; i < 4; i++) {
         front = 200;
         middle = 100;
