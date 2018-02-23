@@ -94,8 +94,8 @@ header nav {
 
 header li {
     font-family: 'Fira Medium';
-    margin: 20px 0 20px 0;
-    padding: 20px 0 20px 0;
+    margin: 40px 0 40px 0;
+    padding: 0;
 }
 
 header a {
@@ -125,6 +125,15 @@ header span:hover {
 
 .contact-pages {
     margin-bottom: 0;
+}
+
+.sliderUp {
+    position: relative;
+    top: 100px;
+    display: none;
+    -webkit-transition: top 0.7s;
+    /* Safari */
+    transition: top 0.7s;
 }
 
 
@@ -198,9 +207,9 @@ header span:hover {
 /* Sections And Mottos Container*/
 
 .container {
-    margin: 0;
-    padding: 0 5% 0 5%;
-    overflow: hidden;
+    margin: 0 5% 0 5%;
+    padding: 0;
+    /*overflow: hidden;*/
     min-height: 600px;
 }
 
@@ -220,7 +229,7 @@ header span:hover {
 /* The animation code */
 
 .front {
-    top: 200px;
+    top: 0px;
     /*top: 200px;*/
     -webkit-transition: top 0.5s;
     /* For Safari 3.1 to 6.0 */
@@ -232,7 +241,8 @@ header span:hover {
 }
 
 .middle {
-    top: 100px;
+    top: 0px;
+    /*top: 100px;*/
     -webkit-transition: top 0.5s;
     /* For Safari 3.1 to 6.0 */
     transition: top 0.5s;
@@ -240,7 +250,8 @@ header span:hover {
 }
 
 .back {
-    top: 50px;
+    top: 0px;
+    /*top: 50px;*/
     -webkit-transition: top 0.5s;
     /* For Safari 3.1 to 6.0 */
     transition: top 0.5s;
@@ -257,6 +268,9 @@ header span:hover {
 }
 
 
+/****************/
+
+
 /* Design Projects */
 
 
@@ -270,6 +284,101 @@ header span:hover {
 
 Keep the flex-container to handle the appearing slideshows
 */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100vh;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content (image) 
+Using fade to point to the images
+*/
+
+.fade {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+/* Add Animation */
+
+.fade {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.1)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* 100% Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .fade {
+        width: 100%;
+    }
+}
 
 .flex-container {}
 
@@ -350,46 +459,54 @@ Keep the flex-container to handle the appearing slideshows
 }
 
 .togglebtn:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 
-/* Slideshow container */
+/* The Modal (background) */
 
-.slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-}
-
-
-/* Hide the images by default */
-
-.slider {
-    text-align: center;
-    object-fit: cover;
-}
-
-
-/* Images */
-
-.slide_1,
-.slide_2,
-.slide_3,
-.slide_4 {
+.modal {
     display: none;
-    margin-left: auto;
-    margin-right: auto;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
     width: 100%;
-    max-height: 300px;
-    opacity: 1;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
 }
 
 
-/* Fading animation 
-!!! doesn't work yet */
+/* Modal Content (image) */
 
-.fade {
+.modal-content {
+    margin: auto;
+    display: none;
+    /*width: 80%;*/
+    height: 80%;
+    max-width: 80%;
+    opacity: 0.4;
+}
+
+
+/* Add Animation */
+
+
+/* fade-in.*/
+
+.modal-content {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
@@ -411,6 +528,41 @@ Keep the flex-container to handle the appearing slideshows
     }
     to {
         opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* change Image Width on Smaller Screens */
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+    }
+    .close {
+        right: 50px;
     }
 }
 
@@ -448,15 +600,16 @@ Keep the flex-container to handle the appearing slideshows
 #services img {
     width: 30%;
     height: auto;
-    padding: 10% 0 10% 10%;
+    margin: 10% 0 10% 10%;
+    padding: 0;
 }
 
 #services h1 {
     position: absolute;
     font-size: 4vw;
     left: 0px;
-    margin: 0;
-    padding: 27% 0 0 0;
+    margin: 27% 0 0 0;
+    padding: 0;
 }
 
 
@@ -464,7 +617,8 @@ Keep the flex-container to handle the appearing slideshows
 
 #motto1 {
     float: right;
-    padding: 27% 14% 0 0;
+    margin: 27% 14% 0 0;
+    padding: 0;
 }
 
 
@@ -482,7 +636,8 @@ Keep the flex-container to handle the appearing slideshows
 
 #motto2 {
     float: left;
-    padding: 45% 2% 0 10%;
+    margin: 45% 2% 0 10%;
+    padding: 0;
 }
 
 #design h1 {
@@ -491,8 +646,8 @@ Keep the flex-container to handle the appearing slideshows
     z-index: 2;
     font-size: 12vw;
     left: 0px;
-    margin: 0;
-    padding: 4% 0 0 50%;
+    margin: 4% 0 0 50%;
+    padding: 0;
 }
 
 #design img {
@@ -508,7 +663,8 @@ Keep the flex-container to handle the appearing slideshows
 #motto3 {
     float: right;
     text-align: center;
-    padding: 5% 0 0 0;
+    margin: 5% 0 0 0;
+    padding: 0;
 }
 
 
@@ -523,14 +679,17 @@ Keep the flex-container to handle the appearing slideshows
 #news img {
     margin: 0;
     width: 35%;
-    padding: 10% 0 0 20%;
+    margin: 10% 0 0 20%;
+    padding: 0;
 }
 
 #news h1 {
     margin: 0;
     font-size: 4.2vw;
     position: absolute;
-    padding: 25% 0 0 8%;
+    left: 53%;
+    margin: 25% 0 0 0;
+    padding: 0;
 }
 
 
@@ -557,7 +716,8 @@ footer a {
     font-size: 1.2em;
     color: black;
     display: inline-block;
-    padding: 0 4% 0 7%;
+    margin: 0 4% 0 7%;
+    padding: 0;
 }
 
 footer p {
@@ -584,7 +744,8 @@ footer a:hover {
 }
 
 #services_footer ul {
-    padding: 5% 0 4% 0;
+    margin: 5% 0 4% 0;
+    padding: 0;
     /*padding-top: 5%;*/
 }
 
@@ -626,8 +787,11 @@ lower towerd the bottom? */
         max-width: 37%;
         max-height: 6%;
     }
+    header li {
+        margin-top: 15%;
+    }
     header a {
-        color: black;
+        color: rgba(41, 41, 41, 0.7);
     }
     .contact-pages a {
         color: rgba(114, 114, 114, 0.7);
@@ -662,14 +826,18 @@ lower towerd the bottom? */
     #news img {
         width: 40%;
     }
+    #news h1 {
+        font-size: 2em;
+        left: 57%;
+    }
     #motto1 {
-        padding-right: 10%;
+        margin-right: 15%;
     }
     #motto2 {
-        padding-left: 10%;
+        margin-left: 20%;
     }
     #motto3 {
-        padding-right: 10%;
+        margin-right: 10%;
     }
     /*******************/
     /* ICI retouches page design/ projets*/
