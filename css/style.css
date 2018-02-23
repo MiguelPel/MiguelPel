@@ -132,7 +132,11 @@ header span:hover {
     top: 100px;
     display: none;
     -webkit-transition: top 0.7s;
-    /* Safari */
+    /* Safari and Chrome*/
+    -moz-transition: top 0.7s;
+    /* Firefox */
+    -o-transition: top 0.7s;
+    /* Opera */
     transition: top 0.7s;
 }
 
@@ -228,31 +232,39 @@ header span:hover {
 
 /* The animation code */
 
-.front {
+.front,
+.middle,
+.back {
     top: 200px;
-    -webkit-transition: top 0.5s;
-    /* For Safari 3.1 to 6.0 */
-    transition: top 0.5s;
+    -webkit-transition: top 0.7s;
+    /* Safari and Chrome*/
+    -moz-transition: top 0.7s;
+    /* Firefox */
+    -o-transition: top 0.7s;
+    /* Opera */
+    transition: top 0.7s;
+    -webkit-transition-timing-function: ease-out;
+    /* Safari and Chrome*/
+    -moz-transition-timing-function: ease-out;
+    /* Firefox */
+    -o-transition-timing-function: ease-out;
+    /* Opera */
     transition-timing-function: ease-out;
     z-index: 2;
     /*animation-name: example;
     animation-duration: 4s;*/
 }
 
+.front {
+    top: 200px;
+}
+
 .middle {
     top: 100px;
-    -webkit-transition: top 0.5s;
-    /* For Safari 3.1 to 6.0 */
-    transition: top 0.5s;
-    transition-timing-function: ease-out;
 }
 
 .back {
     top: 50px;
-    -webkit-transition: top 0.5s;
-    /* For Safari 3.1 to 6.0 */
-    transition: top 0.5s;
-    transition-timing-function: ease-out;
 }
 
 
@@ -269,18 +281,6 @@ header span:hover {
 
 
 /* Design Projects */
-
-
-/* flex-container contains:
-- div class project left/right contains:
-- h1
-- clearfix contains:
-- img
-- p
-- p
-
-Keep the flex-container to handle the appearing slideshows
-*/
 
 
 /* The Modal (background) */
@@ -309,46 +309,6 @@ Keep the flex-container to handle the appearing slideshows
 }
 
 
-/* Modal Content (image) 
-Using fade to point to the images
-*/
-
-.fade {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-
-/* Add Animation */
-
-.fade {
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(0.1)
-    }
-    to {
-        transform: scale(1)
-    }
-}
-
-
 /* The Close Button */
 
 .close {
@@ -371,11 +331,12 @@ Using fade to point to the images
 
 /* 100% Image Width on Smaller Screens */
 
-@media only screen and (max-width: 700px) {
+
+/* @media only screen and (max-width: 700px) {
     .fade {
         width: 100%;
     }
-}
+} */
 
 .flex-container {}
 
@@ -506,11 +467,22 @@ Using fade to point to the images
 .modal-content {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
+    -moz-animation-name: fade;
+    -moz-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
 }
 
 @-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fade {
     from {
         opacity: .4
     }
