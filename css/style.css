@@ -1,5 +1,8 @@
 /* Import fonts */
 
+
+/* check if we actually use the three fonts */
+
 @font-face {
     font-family: 'Fira';
     src: url('../fonts/fira/FiraSans-Regular.ttf') format('truetype');
@@ -31,17 +34,29 @@ body {
     background-color: #FDFDFD;
 }
 
+
+/* orange is a class used as <span> when we need to
+tuurn a letter red*/
+
 .orange {
     color: #FF7F20;
 }
+
+
+/* removes the underline and the color of links.
+links are the top and bottom menu,
+and the words of the sections in the body */
 
 a {
     text-decoration: none;
     color: black;
 }
 
+
+/* uls are: in the header menu, in the footer menu,
+and in the services page's body*/
+
 ul {
-    /* Attention, cela influence aussi la liste du bas!!!*/
     list-style-type: none;
     margin: 0;
     padding: 10px;
@@ -50,10 +65,18 @@ ul {
 
 /* Header */
 
+
+/* header is the html tag */
+
 header {
     padding: 30px 30px 0px 30px;
     overflow: hidden;
 }
+
+
+/* home_header is the id of the homepage's header
+the only one with the picture and the onclick menu
+*/
 
 #home_header {
     height: 100vh;
@@ -62,7 +85,14 @@ header {
     background-position: right bottom;
 }
 
+
+/* services-backgground - the id of the body of the services page */
+
 #services_background {
+    /* tentative pour faire que la page tienne dans un seul écran
+    s'il est horizontal*/
+    /* l'image de cet espace se coupe et s'aggrandit
+    quand on fait apparaitre les textes explicatifs*/
     /*height: 100vh;*/
     height: 100%;
     background: url('../img/background_map.jpg') no-repeat 0 0;
@@ -70,20 +100,25 @@ header {
     background-position: left bottom;
 }
 
+
+/* the logo. So far it's an img on each pages*/
+
 header #logo {
     width: 40%;
 }
+
+
+/* the logo, smaller, for other pages save the index*/
 
 header #logo-small {
     width: 20%;
     min-width: 150px;
 }
 
-header .contact-pages {
-    position: relative;
-    left: -25px;
-    color: rgba(114, 114, 114, 0.7);
-}
+
+/* nav is a container for:
+- on index page, the sliding up ul.
+- on other pages, the contact link*/
 
 header nav {
     position: relative;
@@ -92,9 +127,29 @@ header nav {
     /*display: none;*/
 }
 
+
+/* an li alone inside an ul inside a div id="nav", displaying the contact link on pages
+design, services, and news. The contact link sends to bottom of page.*/
+
+header .contact-pages {
+    position: relative;
+    left: -25px;
+    color: rgba(114, 114, 114, 0.7);
+}
+
+.contact-pages {
+    margin-bottom: 0;
+}
+
+
+/* see above*/
+
 header ul {
     position: relative;
 }
+
+
+/* see above*/
 
 header li {
     position: relative;
@@ -102,6 +157,9 @@ header li {
     margin: 40px 0 80px 0;
     padding: 0;
 }
+
+
+/* see above*/
 
 header a {
     font-family: 'Fira';
@@ -114,6 +172,9 @@ header a:hover,
 header li:hover {
     color: #FF7F20;
 }
+
+
+/* header span is the 'riga maria architect' text*/
 
 header span {
     font-family: 'Fira';
@@ -128,14 +189,15 @@ header span:hover {
     color: #FF7F20;
 }
 
-.contact-pages {
-    margin-bottom: 0;
-}
+
+/* .sliderUp is attached to li. it's the slide-in menu
+Now, they are sliding down and disappear when page refreshed*/
 
 .sliderUp {
     position: relative;
     top: 400px;
     opacity: 0;
+    /* if display: none, they don't appear at all*/
     display: list-item;
     -webkit-transition: all 0.7s;
     -moz-transition: all 0.7s;
@@ -146,15 +208,25 @@ header span:hover {
 
 /* Appearing text Services */
 
+
+/* service_header is header tag inside the service_background body*/
+
 #service_header {
     padding-bottom: 0;
     margin-bottom: 0;
 }
 
+
+/* services_body is INSIDE the service_header
+it contains the ul, div #cell, li with title, and p appearign (toggle)*/
+
 #services_body {
     position: relative;
     padding: 0 5% 0 5%;
 }
+
+
+/* see above*/
 
 .cell {
     display: flex;
@@ -162,6 +234,9 @@ header span:hover {
     justify-content: flex-start;
     align-items: center;
 }
+
+
+/* categries id the class of the titles (li) in service page*/
 
 .catergories {
     font-size: 1.2em;
@@ -179,6 +254,10 @@ header span:hover {
     /* Likely future */
 }
 
+
+/* hidden is the class of the descriptions (p)
+apprearing in services page*/
+
 .hidden {
     font-family: 'Fira';
     position: absolute;
@@ -190,6 +269,10 @@ header span:hover {
 
 
 /* Social Links */
+
+
+/* a div inside the body of the pages.
+containing directly the three imgs of social medias*/
 
 #social {
     position: fixed;
@@ -213,12 +296,22 @@ header span:hover {
 
 /* Sections And Mottos Container*/
 
+
+/* container wraps the actual body of the index page*/
+
 .container {
     margin: 0 5% 0 5%;
     padding: 0;
     /*overflow: hidden;*/
     min-height: 600px;
 }
+
+
+/* section is the containing tags, with id = services, design, news
+sections contains:
+- a, containing img and h1,
+- div class="motto"
+*/
 
 .container section,
 .container img,
@@ -257,20 +350,30 @@ header span:hover {
     animation-duration: 4s;*/
 }
 
+
+/* those numbers are the same in the javascript for animation */
+
 .front {
     top: 300px;
+    z-index: 2;
 }
 
 .middle {
-    top: 100px;
+    top: 150px;
+    z-index: 1;
 }
 
 .back {
-    top: 50px;
+    top: 75px;
+    z-index: -1;
 }
 
 
 /****************/
+
+
+/* container a is for the sections in index page.
+categories is li tags in services page */
 
 .container a img:hover,
 .container a h1:hover,
@@ -285,70 +388,21 @@ header span:hover {
 /* Design Projects */
 
 
-/* The Modal (background) */
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 2;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100vh;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.9);
-    /* Black w/ opacity */
-}
-
-
-/* The Close Button */
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* 100% Image Width on Smaller Screens */
-
-
-/* @media only screen and (max-width: 700px) {
-    .fade {
-        width: 100%;
-    }
-} */
+/* flex-container is the container for each project in
+design and news page. so far unused*/
 
 .flex-container {}
 
+
+/* project is a div inside the flex-container
+contains 
+- h1 'togglebutton' and
+- div class "fix", containing img and a div "txt", containing
+- two p without class
+*/
+
 .project {
     margin: 0 50px 50px 50px;
-}
-
-.fix {
-    display: flex;
-    margin: 20px 0;
 }
 
 .project h1 {
@@ -359,12 +413,34 @@ header span:hover {
     z-index: 1;
 }
 
+
+/* class "fix", containing img and a div "txt" */
+
+.fix {
+    display: flex;
+    margin: 20px 0;
+}
+
+
+/* targeting the img directly from the project class*/
+
 .project img {
     width: 50%;
     height: auto;
     z-index: 0;
     align-self: flex-start;
 }
+
+
+/* div "txt", containing
+- two p without class */
+
+.txt {
+    align-content: center;
+}
+
+
+/* targetting the 2 p's directly from the class project*/
 
 .project p {
     font-family: 'Fira Medium';
@@ -375,9 +451,8 @@ header span:hover {
     width: 80%;
 }
 
-.txt {
-    align-content: center;
-}
+
+/* right and left are an additional class for project.*/
 
 .right h1 {
     left: 50%;
@@ -386,6 +461,14 @@ header span:hover {
 .left h1 {
     left: -5%;
 }
+
+
+/* change the order of p and img to change the order on screen*/
+
+
+/* consider changing right p to right txt
+tested. Changes the padding of the texts, and hox it's indented
+*/
 
 .right p {
     order: 1;
@@ -405,6 +488,9 @@ header span:hover {
 
 
 /******************/
+
+
+/* those are the h1 class, and the img class*/
 
 .togglebtn {
     cursor: default;
@@ -451,6 +537,10 @@ header span:hover {
 
 /* Modal Content (image) */
 
+
+/* here we have a problem when the screen is smaller, but not enough
+yet: the img stretches*/
+
 .modal-content {
     margin: auto;
     display: none;
@@ -459,6 +549,19 @@ header span:hover {
     max-width: 80%;
     opacity: 0.4;
 }
+
+
+/* 100% Image Width on Smaller Screens */
+
+
+/* there is no .fade class. The class of the images is modal-content*/
+
+
+/* @media only screen and (max-width: 700px) {
+    .fade {
+        width: 100%;
+    }
+} */
 
 
 /* Add Animation */
@@ -521,20 +624,6 @@ header span:hover {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-
-/* change Image Width on Smaller Screens */
-
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-        height: auto;
-        max-height: 80vh;
-    }
-    .close {
-        right: 50px;
-    }
 }
 
 
@@ -666,6 +755,10 @@ header span:hover {
 
 /* footer */
 
+
+/* footer is html tag present on each page EXCEPT the services pages
+Because of the background image, not used for services page.*/
+
 footer {
     margin: 5% 0 0 0;
     padding: 10% 0 5% 0;
@@ -675,6 +768,9 @@ footer {
     position: relative;
     z-index: 0;
 }
+
+
+/* it's the list of links at bottom of pages*/
 
 footer ul {
     padding-top: 5%;
@@ -691,6 +787,9 @@ footer a {
     padding: 0;
 }
 
+
+/* footer p is the contact details.*/
+
 footer p {
     position: absolute;
     font-family: 'Fira Medium';
@@ -705,6 +804,9 @@ footer a:hover {
 
 
 /* Services footer */
+
+
+/* here is the services page footer. It's a div, with Id*/
 
 #services_footer {
     margin: 0;
@@ -730,6 +832,9 @@ footer a:hover {
     padding: 0 4% 0 7%;
 }
 
+
+/* service-footer p is the contact details on services page.*/
+
 #services_footer p {
     position: absolute;
     font-family: 'Fira Medium';
@@ -744,148 +849,47 @@ lower towerd the bottom? */
     color: #FF7F20;
 }
 
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    /* changer le riga maria */
-    header #logo {
-        width: 50%;
-    }
-    header span {
-        font-size: 1.2em;
-        position: absolute;
-        left: 7%;
-        top: 12%;
-        max-width: 37%;
-        max-height: 6%;
-    }
-    header li {
-        margin-top: 15%;
-    }
-    header a {
-        color: rgba(41, 41, 41, 0.7);
-    }
-    .contact-pages a {
-        color: rgba(114, 114, 114, 0.7);
-    }
-    #social {
-        top: 10px;
-        right: -2px;
-    }
-    #services_background {
-        height: 100%;
-    }
-    #services img {
-        width: 35%;
-    }
-    #services_body {
-        height: 100%;
-    }
-    .cell {
-        display: inline;
-    }
-    .catergories {
-        font-size: 1.2em;
-        width: 100%;
-    }
-    .hidden {
-        position: static;
-        width: 100%;
-    }
-    #design img {
-        width: 42%;
-    }
-    #news img {
-        width: 40%;
-    }
-    #news h1 {
-        font-size: 2em;
-        left: 57%;
-    }
-    #motto1 {
-        margin-right: 15%;
-    }
-    #motto2 {
-        margin-left: 20%;
-    }
-    #motto3 {
-        margin-right: 10%;
-    }
-    /*******************/
-    /* ICI retouches page design/ projets*/
-    /********************/
-    .project {
-        margin: 0 10px 10px 10px;
-    }
-    .fix {
-        display: flex;
-        margin: 20px 0;
-    }
-    .project h1 {
-        font-size: 3rem;
-        position: relative;
-        top: 65px;
-        text-transform: lowercase;
-        z-index: 1;
-    }
-    .project img {
-        width: 50%;
-        height: auto;
-        z-index: 0;
-        align-self: flex-start;
-    }
-    .project p {
-        font-family: 'Fira Medium';
-        font-size: 1rem;
-        color: rgba(114, 114, 114, 0.7);
-        width: 40%;
-        margin: 0 30px 30px 30px;
-        width: 80%;
-    }
-    .txt {
-        align-content: center;
-    }
-    .right h1 {
-        left: 30%;
-    }
-    .left h1 {
-        left: -5%;
-    }
-    .right p {
-        order: 1;
-        align-self: center;
-        padding-left: 0px;
-        padding-top: 15px;
-    }
-    .right img {
-        order: 2;
-    }
-    /************************/
-    footer ul,
-    #services_footer ul {
-        padding-top: 10%;
-    }
-    footer li,
-    footer a,
-    #services_footer li,
-    #services_footer a {
-        padding-top: 5%;
-        display: block;
-        /* ATTENTION, check if work on every pages */
-        size: 1em;
-    }
-    footer p,
-    #services_footer p {
-        bottom: 8%;
-    }
+
+/*Responsive Styles*/
+
+
+/* Desktops ------------------ */
+
+@media only screen and (min-width: 1201px) {
+    /* Add Your CSS Styling Here */
 }
 
-@media only screen and (max-width: 500px) {
-    .project p {
-        font-size: 0.8em;
-    }
-    /* Plus AMELIORER LES MARGES */
-    #social {
-        top: 5px;
-        right: -15px;
-    }
+
+/* Old Desktops and laptops ------------------ */
+
+@media only screen and (min-width: 1025px) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Tablets (landscape) ------------------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Tablets (portrait) -------------------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Smartphones (landscape) ---------------- */
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Smartphones (portrait) ---------------- */
+
+@media only screen and (max-width: 320px) {
+    /* Add Your CSS Styling Here */
 }
