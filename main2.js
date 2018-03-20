@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log(docHeight);
 
+    // for (var i = 0; i < frontElements.length; i++) {
+    //     frontElements[i].style.position = 'ralative';
+    //     middleElements[i].style.position = 'ralative';
+    //     backElements[i].style.position = 'ralative';
+    // }
+
     console.log("front: " + front);
     console.log("middle: " + middle);
     console.log("back: " + back);
@@ -39,12 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
     // get the sliderUp, the 4 slide-in menu element (onClick)
     var sliders = document.getElementsByClassName("sliderUp");
     // function that set the animated objects AND the sliderUp elements even further down
-    for (var i = 0; i < 4; i++) {
-        var margin = (i * 100) + 200;
-        // elements[i].style.top = margin + 'px';
-        sliders[i].style.top = margin + 'px';
-        // console.log(margin);
-    }
+    if (sliders[0]) {
+        for (var i = 0; i < 4; i++) {
+            var margin = (i * 100) + 200;
+            // elements[i].style.top = margin + 'px';
+            sliders[i].style.top = margin + 'px';
+            // console.log(margin);
+        }
+    };
 
     function numerize(str) {
         var output = Number(str.match(/\d+/)[0]);
@@ -90,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (back >= backOrigin) back = backOrigin;
         }
         // then here we set all the front, middle, and back elements' positions
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < frontElements.length; i++) {
             frontElements[i].style.top = front + 'px';
             middleElements[i].style.top = middle + 'px';
             backElements[i].style.top = back + 'px';
@@ -106,18 +114,22 @@ document.addEventListener("DOMContentLoaded", function() {
     //
     // Here we're working on the header manu animation.
     // Get the header
-    var header = document.querySelector("header");
-    // add event listener 'OnClick';
-    header.addEventListener("click", function() {
-        // the j is set here for scope
-        var j;
-        // set all the sliderUp's opacity to 1 (on),
-        // and the top pixels at their actual position in CSS
-        for (j = 0; j < 4; j++) {
-            sliders[j].style.opacity = "1";
-            sliders[j].style.top = "0px";
-        }
-    });
+    if (sliders[0]) {
+        var header = document.querySelector("header");
+        // add event listener 'OnClick';
+        header.addEventListener("click", function() {
+            // the j is set here for scope
+            var j;
+            // set all the sliderUp's opacity to 1 (on),
+            // and the top pixels at their actual position in CSS
+
+            for (j = 0; j < 4; j++) {
+                sliders[j].style.opacity = "1";
+                sliders[j].style.top = "0px";
+            }
+
+        });
+    }
 
     // First draft for a reset function that will be used to set the position
     // of the front, middle, and back objects.

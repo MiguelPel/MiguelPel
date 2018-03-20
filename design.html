@@ -33,10 +33,10 @@
     <div class="container" id="design-container">
         <div class="flex-container">
             <div class="project left">
-                <h1 class="togglebtn" onclick="displaySlide(1)">ST<span class="orange">I</span>V Cafe</h1>
+                <h1 class="togglebtn animate front" onclick="displaySlide(1)">ST<span class="orange">I</span>V Cafe</h1>
                 <div class="fix">
-                    <img class="togglebtn" onclick="displaySlide(1)" src="img/projects/cafe1.jpg" alt="">
-                    <div class="txt">
+                    <img class="togglebtn animate middle" onclick="displaySlide(1)" src="img/projects/cafe1.jpg" alt="">
+                    <div class="txt animate back">
                         <p>Στην Ψαφε η αισθητική είναι το εργαλείο για την βελτίωση της καθημερηνότητας</p>
                         <p>σχεδιάζουμε έπιπλα που θα βελτιώσουν την καθημερηνότητά σας και διευκολύνουν τις δραστηριώτητές σας</p>
                     </div>
@@ -193,6 +193,7 @@
             slides[slideIndex - 1].style.opacity = "1";
         }
     </script>
+    <script src="design.js"></script>
 </body>
 
 </html>

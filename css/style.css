@@ -24,14 +24,29 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans/OpenSans-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* Global */
 
 body {
-    font-family: 'Fira', Arial, Helvetica, sans-serif;
+    /* font-family: 'Fira', Arial, Helvetica, sans-serif; */
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
     background-color: #FDFDFD;
+}
+
+#services_body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
 }
 
 
@@ -83,21 +98,6 @@ the only one with the picture and the onclick menu
     background: url('../img/background_lamp.jpg') no-repeat 0 0;
     background-size: cover;
     background-position: right bottom;
-}
-
-
-/* services-backgground - the id of the body of the services page */
-
-#services_background {
-    /* tentative pour faire que la page tienne dans un seul écran
-    s'il est horizontal*/
-    /* l'image de cet espace se coupe et s'aggrandit
-    quand on fait apparaitre les textes explicatifs*/
-    /*height: 100vh;*/
-    height: 100%;
-    background: url('../img/background_map.jpg') no-repeat 0 0;
-    background-size: cover;
-    background-position: left bottom;
 }
 
 
@@ -176,6 +176,12 @@ header li:hover {
 
 /* header span is the 'riga maria architect' text*/
 
+
+/***************************************/
+
+
+/*****HERE change from span to h1!!!*/
+
 header span {
     font-family: 'Fira';
     text-transform: uppercase;
@@ -212,15 +218,15 @@ Now, they are sliding down and disappear when page refreshed*/
 /* service_header is header tag inside the service_background body*/
 
 #service_header {
-    padding-bottom: 0;
-    margin-bottom: 0;
+    padding: 0;
+    margin: 0;
 }
 
 
 /* services_body is INSIDE the service_header
 it contains the ul, div #cell, li with title, and p appearign (toggle)*/
 
-#services_body {
+#services_content {
     position: relative;
     padding: 0 5% 0 5%;
 }
@@ -238,12 +244,13 @@ it contains the ul, div #cell, li with title, and p appearign (toggle)*/
 
 /* categries id the class of the titles (li) in service page*/
 
-.catergories {
+.categories {
     font-size: 1.2em;
     cursor: default;
     width: 20%;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0 5px;
+    margin: 1px 1px 11px 1px;
+    z-index: 2;
     -webkit-user-select: none;
     /* Chrome all / Safari all */
     -moz-user-select: none;
@@ -254,17 +261,52 @@ it contains the ul, div #cell, li with title, and p appearign (toggle)*/
     /* Likely future */
 }
 
+.categories:hover {
+    color: #FF7F20;
+    border: none;
+    margin: 0 0 10px 0;
+    border: 1px solid #FF7F20;
+}
+
 
 /* hidden is the class of the descriptions (p)
 apprearing in services page*/
 
 .hidden {
-    font-family: 'Fira';
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     position: absolute;
     left: 26%;
-    width: 70%;
+    width: 60%;
     height: 0px;
+    max-height: 4rem;
     overflow: hidden;
+    z-index: 2;
+}
+
+.appear {
+    -webkit-animation: appear 1.5s;
+    -moz-animation: appear 1.5s;
+    animation: appear 1.5s;
+    animation-fill-mode: forwards;
+    /* border: 1px solid red; */
+}
+
+@keyframes appear {
+    100% {
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes appear {
+    100% {
+        height: 100%;
+    }
+}
+
+@-moz-keyframes appear {
+    100% {
+        height: 100%;
+    }
 }
 
 
@@ -811,13 +853,13 @@ footer a:hover {
 #services_footer {
     margin: 0;
     padding: 0;
-    position: relative;
+    position: absolute;
     bottom: 0px;
     width: 100%;
 }
 
 #services_footer ul {
-    margin: 5% 0 4% 0;
+    margin: 4% 0 4% 0;
     padding: 0;
     /*padding-top: 5%;*/
 }
@@ -829,7 +871,7 @@ footer a:hover {
     font-size: 1.2em;
     color: black;
     display: inline-block;
-    padding: 0 4% 0 7%;
+    padding: 0 0;
 }
 
 
@@ -842,7 +884,7 @@ footer a:hover {
     right: 5%;
     /* how can I push that even
 lower towerd the bottom? */
-    bottom: 0.2%;
+    bottom: 10%;
 }
 
 #services_footer a:hover {

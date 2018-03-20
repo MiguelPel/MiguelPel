@@ -1,0 +1,488 @@
+/* Import fonts */
+
+
+/* check if we actually use the three fonts */
+
+@font-face {
+    font-family: 'Fira';
+    src: url('../fonts/fira/FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Medium';
+    src: url('../fonts/fira/FiraSans-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Bold';
+    src: url('../fonts/fira/FiraSans-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Global */
+
+body {
+    font-family: 'Fira', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #FDFDFD;
+}
+
+
+/* orange is a class used as <span> when we need to
+tuurn a letter red*/
+
+.orange {
+    color: #FF7F20;
+}
+
+
+/* removes the underline and the color of links.
+links are the top and bottom menu,
+and the words of the sections in the body */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* uls are: in the header menu, in the footer menu,
+and in the services page's body*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+
+/* Header */
+
+
+/* header is the html tag */
+
+header {
+    padding: 30px 30px 0px 30px;
+    overflow: hidden;
+}
+
+
+/* the logo. So far it's an img on each pages*/
+
+header #logo {
+    width: 40%;
+}
+
+
+/* the logo, smaller, for other pages save the index*/
+
+header #logo-small {
+    width: 20%;
+    min-width: 150px;
+}
+
+
+/* nav is a container for:
+- on index page, the sliding up ul.
+- on other pages, the contact link*/
+
+header nav {
+    position: relative;
+    top: 15%;
+    left: 2%;
+    /*display: none;*/
+}
+
+
+/* an li alone inside an ul inside a div id="nav", displaying the contact link on pages
+design, services, and news. The contact link sends to bottom of page.*/
+
+header .contact-pages {
+    position: relative;
+    left: -25px;
+    color: rgba(114, 114, 114, 0.7);
+}
+
+.contact-pages {
+    margin-bottom: 0;
+}
+
+
+/* see above*/
+
+header ul {
+    position: relative;
+}
+
+
+/* see above*/
+
+header li {
+    position: relative;
+    font-family: 'Fira Medium';
+    margin: 40px 0 80px 0;
+    padding: 0;
+}
+
+
+/* see above*/
+
+header a {
+    font-family: 'Fira';
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: rgba(114, 114, 114, 0.7);
+}
+
+header a:hover,
+header li:hover {
+    color: #FF7F20;
+}
+
+
+/* categries id the class of the titles (li) in service page*/
+
+.catergories {
+    font-size: 1.2em;
+    cursor: default;
+    width: 20%;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+}
+
+
+/* Social Links */
+
+
+/* a div inside the body of the pages.
+containing directly the three imgs of social medias*/
+
+#social {
+    position: fixed;
+    top: 20px;
+    right: 15px;
+    z-index: 2;
+}
+
+#social img {
+    display: block;
+    margin: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.6;
+}
+
+#social img:hover {
+    opacity: 1;
+}
+
+
+/* Sections And Mottos Container*/
+
+
+/* container wraps the actual body of the index page*/
+
+.container {
+    margin: 0 5% 0 5%;
+    padding: 0;
+    /*overflow: hidden;*/
+    min-height: 600px;
+}
+
+
+/* section is the containing tags, with id = services, design, news
+sections contains:
+- a, containing img and h1,
+- div class="motto"
+*/
+
+.container section,
+.container img,
+.container h1,
+.container div {
+    position: relative;
+}
+
+.container h1 {
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+
+/* The animation code */
+
+.front,
+.middle,
+.back {
+    -webkit-transition: top 1s;
+    /* Safari and Chrome*/
+    -moz-transition: top 1s;
+    /* Firefox */
+    -o-transition: top 1s;
+    /* Opera */
+    transition: top 1s;
+    -webkit-transition-timing-function: ease-out;
+    /* Safari and Chrome*/
+    -moz-transition-timing-function: ease-out;
+    /* Firefox */
+    -o-transition-timing-function: ease-out;
+    /* Opera */
+    transition-timing-function: ease-out;
+    z-index: 2;
+    /*animation-name: example;
+    animation-duration: 4s;*/
+}
+
+
+/* those numbers are the same in the javascript for animation */
+
+.front {
+    top: 200px;
+    z-index: 2;
+}
+
+.middle {
+    top: 100px;
+    z-index: 1;
+}
+
+.back {
+    top: 50px;
+    z-index: -1;
+}
+
+
+/****************/
+
+
+/* container a is for the sections in index page.
+categories is li tags in services page */
+
+.container a img:hover,
+.container a h1:hover,
+.categories li:hover {
+    opacity: 0.7;
+}
+
+
+/****************/
+
+
+/* Design Projects */
+
+
+/* project is a div inside the flex-container
+contains 
+- h1 'togglebutton' and
+- div class "fix", containing img and a div "txt", containing
+- two p without class
+*/
+
+.project {
+    margin: 0 5% 5% 5%;
+}
+
+.project h1 {
+    font-size: 4rem;
+    position: relative;
+    top: 300px;
+    text-transform: lowercase;
+}
+
+
+/* class "fix", containing img and a div "txt" */
+
+.fix {
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+
+
+/* targeting the img directly from the project class*/
+
+.project img {
+    width: 50%;
+    height: auto;
+    /* makes the images scale instead of 's'allonger' */
+    align-self: flex-start;
+}
+
+
+/* div "txt", containing
+- two p without class */
+
+.txt {
+    align-content: center;
+}
+
+
+/* targetting the 2 p's directly from the class project*/
+
+.project p {
+    font-family: 'Fira Medium';
+    font-size: 1.5rem;
+    color: rgba(114, 114, 114, 0.7);
+    /* width: 40%; */
+    margin: 0 5% 5% 5%;
+    /* width: 80%; */
+}
+
+
+/* right and left are an additional class for project.*/
+
+.right h1 {
+    left: 50%;
+}
+
+.left h1 {
+    left: -5%;
+}
+
+
+/* change the order of p and img to change the order on screen*/
+
+
+/* consider changing right p to right txt
+tested. Changes the padding of the texts, and hox it's indented
+*/
+
+.right p {
+    order: 1;
+    align-self: center;
+    padding-left: 0;
+    left: 10%;
+}
+
+.right img {
+    order: 2;
+}
+
+
+/* those are the h1 class, and the img class*/
+
+.togglebtn {
+    cursor: default;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /*Likely future */
+}
+
+.togglebtn:hover {
+    opacity: 0.8;
+}
+
+
+/* footer */
+
+
+/* footer is html tag present on each page EXCEPT the services pages
+Because of the background image, not used for services page.*/
+
+footer {
+    margin: 5% 0 0 0;
+    padding: 0 0 5% 0;
+    background: url('../img/background_footer.jpg') no-repeat;
+    background-size: cover;
+    min-height: 200px;
+    position: relative;
+    z-index: 0;
+}
+
+
+/* it's the list of links at bottom of pages*/
+
+footer ul {
+    padding-top: 5%;
+}
+
+footer li,
+footer a {
+    font-family: 'Fira Medium';
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: black;
+    display: inline-block;
+    margin: 0 4% 0 7%;
+    padding: 0;
+}
+
+
+/* footer p is the contact details.*/
+
+footer p {
+    position: absolute;
+    font-family: 'Fira Medium';
+    font-size: 1.2em;
+    right: 5%;
+    bottom: 10%;
+}
+
+footer a:hover {
+    color: #FF7F20;
+}
+
+
+/*Responsive Styles*/
+
+
+/* Desktops ------------------ */
+
+@media only screen and (min-width: 1201px) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Old Desktops and laptops ------------------ */
+
+@media only screen and (min-width: 1025px) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Tablets (landscape) ------------------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Tablets (portrait) -------------------- */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Smartphones (landscape) ---------------- */
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+    /* Add Your CSS Styling Here */
+}
+
+
+/* Smartphones (portrait) ---------------- */
+
+@media only screen and (max-width: 320px) {
+    /* Add Your CSS Styling Here */
+}
