@@ -84,7 +84,7 @@ ul {
 /* header is the html tag */
 
 header {
-    padding: 30px 30px 0px 30px;
+    padding: 20px 30px 0px 30px;
     overflow: hidden;
 }
 
@@ -111,6 +111,7 @@ header #logo {
 /* the logo, smaller, for other pages save the index*/
 
 header #logo-small {
+    margin: 0;
     width: 20%;
     min-width: 150px;
 }
@@ -182,13 +183,15 @@ header li:hover {
 
 /*****HERE change from span to h1!!!*/
 
-header span {
+header h1 {
+    /* display: inline; */
     font-family: 'Fira';
     text-transform: uppercase;
-    font-size: 1.6em;
+    font-size: 1em;
     position: absolute;
     right: 5%;
     bottom: 5%;
+    color: rgba(114, 114, 114, 0.7);
 }
 
 header span:hover {
@@ -220,6 +223,10 @@ Now, they are sliding down and disappear when page refreshed*/
 #service_header {
     padding: 0;
     margin: 0;
+}
+
+#in-page-link {
+    height: 0;
 }
 
 
@@ -278,7 +285,7 @@ apprearing in services page*/
     left: 26%;
     width: 60%;
     height: 0px;
-    max-height: 4rem;
+    max-height: 4.5rem;
     overflow: hidden;
     z-index: 2;
 }
@@ -801,21 +808,31 @@ yet: the img stretches*/
 /* footer is html tag present on each page EXCEPT the services pages
 Because of the background image, not used for services page.*/
 
-footer {
-    margin: 5% 0 0 0;
-    padding: 10% 0 5% 0;
-    background: url('../img/background_footer.jpg') no-repeat;
-    background-size: cover;
-    min-height: 200px;
-    position: relative;
-    z-index: 0;
-}
-
 
 /* it's the list of links at bottom of pages*/
 
+
+/* footer */
+
+footer {
+    margin: 5% 0 0 0;
+    padding: 10% 0 5% 0;
+    position: relative;
+    /* display: flex;
+    flex-direction: row; */
+    min-height: 200px;
+    background: url('../img/background_footer.jpg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    z-index: 0;
+}
+
 footer ul {
-    padding-top: 5%;
+    position: absolute;
+    width: 80%;
+    bottom: 15%;
+    margin: 0;
+    padding: 0;
 }
 
 footer li,
@@ -830,65 +847,28 @@ footer a {
 }
 
 
-/* footer p is the contact details.*/
+/* service-footer p is the contact details on services page.*/
 
 footer p {
+    margin: 0;
+    padding: 0;
     position: absolute;
     font-family: 'Fira Medium';
     font-size: 1.2em;
     right: 5%;
-    bottom: 10%;
+    bottom: 15%;
 }
 
 footer a:hover {
     color: #FF7F20;
 }
 
-
-/* Services footer */
-
-
-/* here is the services page footer. It's a div, with Id*/
-
 #services_footer {
+    padding: 0;
     margin: 0;
-    padding: 0;
+    height: 50px;
     position: absolute;
-    bottom: 0px;
-    width: 100%;
-}
-
-#services_footer ul {
-    margin: 4% 0 4% 0;
-    padding: 0;
-    /*padding-top: 5%;*/
-}
-
-#services_footer li,
-#services_footer a {
-    font-family: 'Fira Medium';
-    text-transform: uppercase;
-    font-size: 1.2em;
-    color: black;
-    display: inline-block;
-    padding: 0 0;
-}
-
-
-/* service-footer p is the contact details on services page.*/
-
-#services_footer p {
-    position: absolute;
-    font-family: 'Fira Medium';
-    font-size: 1.2em;
-    right: 5%;
-    /* how can I push that even
-lower towerd the bottom? */
-    bottom: 10%;
-}
-
-#services_footer a:hover {
-    color: #FF7F20;
+    bottom: 0;
 }
 
 
